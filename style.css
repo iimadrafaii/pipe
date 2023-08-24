@@ -1,0 +1,284 @@
+:root {
+    --main: #089C5E
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Questrial&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eee;
+}
+
+
+.container:has(.navbar) {
+    padding-bottom: 0;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.navbar li a {
+    color: inherit;
+    text-decoration: none;
+    padding: .5rem;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    transition: .4s;
+    font-weight: 700;
+}
+
+.navbar li a.active {
+    background-color: var(--main);
+    color: #fff;
+}
+
+.navbar li:nth-child(2) a:hover,
+.navbar li:nth-child(2) a.active {
+    background-color: #b4fadd;
+    color: #00E472;
+}
+
+.navbar li:nth-child(3) a:hover,
+.navbar li:nth-child(3) a.active {
+    background-color: #fab4b4;
+    color: red;
+
+}
+
+.navbar li:nth-child(4) a:hover,
+.navbar li:nth-child(4) a.active {
+    background-color: #fae3b4;
+    color: orange;
+
+}
+
+.navbar li:nth-child(5) a:hover,
+.navbar li:nth-child(5) a.active {
+    background-color: #b4d3fa;
+    color: blue;
+
+}
+
+._header {
+    background-color: var(--main);
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+._card {
+    width: 100%;
+    border-radius: .5rem;
+    background-color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+._card:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
+.flex._inner {
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.flex._inner ._inner_content {
+    border: 2px solid #eee;
+    padding: .5rem;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: #fff;
+}
+
+.flex._inner ._inner_content .flex span {
+    width: 6rem;
+    display: flex;
+    justify-content: end;
+}
+
+.flex p {
+    font-weight: 700;
+    gap: .2rem;
+}
+
+._content {
+    position: relative;
+    margin-left: 1.8rem;
+}
+
+._content_inner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: #f7f7f7;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+._content_inner:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+._content::before {
+    content: '';
+    position: absolute;
+    margin-right: 0.5rem;
+    width: .1rem;
+    height: 110%;
+    left: -1.5rem;
+    top: -2.2rem;
+    border-radius: .2rem;
+}
+
+._card.ok>*::before {
+    background-color: #00E472;
+}
+
+._card.failed>*::before {
+    background-color: red;
+}
+
+._card.error>*::before {
+    background-color: orange;
+}
+
+._card.unrecognised>*::before {
+    background-color: blue;
+}
+
+._head {
+    margin-bottom: 2rem;
+}
+
+._head::before {
+    content: '';
+    display: inline-block;
+    margin-right: 0.5rem;
+    width: .7rem;
+    height: .7rem;
+    border-radius: .1rem;
+    transform: rotate(45deg);
+}
+
+
+.flex span {
+    color: grey;
+    font-weight: 700;
+}
+
+.status {
+    background-color: #b4fadd;
+    color: var(--main);
+    font-weight: 900;
+    padding: .1rem .5rem;
+    border-radius: .5rem;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+.status.ok {
+    background-color: #b4fadd;
+    color: #00E472;
+}
+
+.status.failed {
+    background-color: #fab4b4;
+    color: red;
+}
+
+.status.error {
+    background-color: #fae3b4;
+    color: orange;
+}
+
+.status.unrecognised {
+    background-color: #b4d3fa;
+    color: blue;
+}
+
+._link_show_error svg {
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-overlay {
+    background-color: #000000a4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal .modal-content {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    min-width: 30rem;
+    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 990;
+
+    transform: translate(-50%, -50%);
+}
+
+.modal .close-modal {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 900;
+}
+
+.modal hr {
+    margin: 1rem 0;
+}
+
+.modal .modal-detail {}
