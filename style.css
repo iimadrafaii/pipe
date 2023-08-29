@@ -1,9 +1,8 @@
 :root {
-    --main: #089C5E
+    --main: #089c5e;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Questrial&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Questrial&display=swap");
 
 * {
     margin: 0;
@@ -11,11 +10,18 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #eee;
+::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
+::-webkit-scrollbar-thumb {
+    background: var(--main);
+}
+
+body {
+    font-family: "Inter", "arial", sans-serif;
+    background-color: #eee;
+}
 
 .container:has(.navbar) {
     padding-bottom: 0;
@@ -32,10 +38,10 @@ body {
 .navbar li a {
     color: inherit;
     text-decoration: none;
-    padding: .5rem;
+    padding: 0.5rem;
     text-transform: uppercase;
-    border-radius: .5rem;
-    transition: .4s;
+    border-radius: 0.5rem;
+    transition: 0.4s;
     font-weight: 700;
 }
 
@@ -47,28 +53,25 @@ body {
 .navbar li:nth-child(2) a:hover,
 .navbar li:nth-child(2) a.active {
     background-color: #b4fadd;
-    color: #00E472;
+    color: #00e472;
 }
 
 .navbar li:nth-child(3) a:hover,
 .navbar li:nth-child(3) a.active {
     background-color: #fab4b4;
     color: red;
-
 }
 
 .navbar li:nth-child(4) a:hover,
 .navbar li:nth-child(4) a.active {
     background-color: #fae3b4;
     color: orange;
-
 }
 
 .navbar li:nth-child(5) a:hover,
 .navbar li:nth-child(5) a.active {
     background-color: #b4d3fa;
     color: blue;
-
 }
 
 ._header {
@@ -86,7 +89,7 @@ body {
 
 ._card {
     width: 100%;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: #fff;
     padding: 1rem;
     display: flex;
@@ -100,7 +103,7 @@ body {
 .flex {
     display: flex;
     align-items: center;
-    gap: .2rem;
+    gap: 0.2rem;
 }
 
 .flex._inner {
@@ -110,11 +113,11 @@ body {
 
 .flex._inner ._inner_content {
     border: 2px solid #eee;
-    padding: .5rem;
-    border-radius: .5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 0.5rem;
     background-color: #fff;
 }
 
@@ -126,7 +129,7 @@ body {
 
 .flex p {
     font-weight: 700;
-    gap: .2rem;
+    gap: 0.2rem;
 }
 
 ._content {
@@ -140,7 +143,7 @@ body {
     gap: 2rem;
     background-color: #f7f7f7;
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
 }
 
 ._content_inner:not(:last-child) {
@@ -148,29 +151,29 @@ body {
 }
 
 ._content::before {
-    content: '';
+    content: "";
     position: absolute;
     margin-right: 0.5rem;
-    width: .1rem;
+    width: 0.1rem;
     height: 110%;
     left: -1.5rem;
     top: -2.2rem;
-    border-radius: .2rem;
+    border-radius: 0.2rem;
 }
 
-._card.ok>*::before {
-    background-color: #00E472;
+._card.ok > *::before {
+    background-color: #00e472;
 }
 
-._card.failed>*::before {
+._card.failed > *::before {
     background-color: red;
 }
 
-._card.error>*::before {
+._card.error > *::before {
     background-color: orange;
 }
 
-._card.unrecognised>*::before {
+._card.unrecognised > *::before {
     background-color: blue;
 }
 
@@ -179,34 +182,34 @@ body {
 }
 
 ._head::before {
-    content: '';
+    content: "";
     display: inline-block;
     margin-right: 0.5rem;
-    width: .7rem;
-    height: .7rem;
-    border-radius: .1rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 0.1rem;
     transform: rotate(45deg);
 }
-
 
 .flex span {
     color: grey;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .status {
     background-color: #b4fadd;
     color: var(--main);
     font-weight: 900;
-    padding: .1rem .5rem;
-    border-radius: .5rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 0.5rem;
     width: fit-content;
     text-transform: uppercase;
 }
 
 .status.ok {
     background-color: #b4fadd;
-    color: #00E472;
+    color: #00e472;
 }
 
 .status.failed {
@@ -238,7 +241,7 @@ body {
     z-index: 99;
     opacity: 0;
     pointer-events: none;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .modal.active {
@@ -258,8 +261,9 @@ body {
 .modal .modal-content {
     background-color: #fff;
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     min-width: 30rem;
+    max-height: 70vh;
     position: relative;
     position: fixed;
     top: 50%;
@@ -267,6 +271,7 @@ body {
     z-index: 990;
 
     transform: translate(-50%, -50%);
+    overflow-y: scroll;
 }
 
 .modal .close-modal {
@@ -281,4 +286,62 @@ body {
     margin: 1rem 0;
 }
 
-.modal .modal-detail {}
+.modal-bloc:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.modal-bloc-inner {
+    gap: 1rem;
+    min-width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    height: fit-content;
+}
+
+@media only screen and (max-width: 768px) {
+    .modal-bloc-inner {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.modal-detail-inner {
+    background-color: #eee;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+}
+
+.modal-detail-inner ul {
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    list-style: none;
+}
+
+.modal-detail-inner li {
+    display: flex;
+    gap: 0.5rem;
+}
+.modal-detail-inner li::before {
+    content: "";
+    flex-shrink: 0;
+    display: block;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: var(--main);
+    transform: translateY(0.3rem) rotate(45deg);
+    margin-right: 0.5rem;
+}
+
+.modal-detail-inner h4 {
+    font-weight: 800;
+}
+
+.modal-detail-inner p {
+    font-weight: 500;
+}

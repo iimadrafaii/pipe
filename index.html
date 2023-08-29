@@ -1,132 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <!-- header -->
-    <div class="_header">
-        <h1>Regression Tests Report</h1>
-        <div>
-            <span>Date:</span>
-            <span>2023-08-13 15:44</span>
-        </div>
-    </div>
-
-    <!-- navbar filtre -->
-    <div class="container">
-        <h2 style="text-align: center;margin-bottom: 1rem;">Filter:</h2>
-        <ul class="navbar">
-            <li><a href="index.html" class="active">all</a></li>
-            <li><a href="ok.html" class="">ok</a></li>
-            <li><a href="failed.html" class="">failed</a></li>
-            <li><a href="error.html" class="">error</a></li>
-            <li><a href="unrecognised.html" class="">unrecognised</a></li>
-        </ul>
-    </div>
-
-    <!-- modal -->
-
-    <div class="modal" id="popupToShow_1">
-        <div class="modal-overlay" id="overlayClosePopup_1"></div>
-        <div class="modal-content">
-            <span class="close-modal" id="closePopup_1">x</span>
-            <!-- h1 = titre de modal -->
-            <h1>Test details</h1>
-            <hr>
-            <div class="modal-detail">
-                Lorem ipsum dolor sit amet.
+    <body>
+        <!-- header -->
+        <div class="_header">
+            <h1>Regression Tests Report</h1>
+            <div>
+                <span>Date:</span>
+                <span>2023-08-13 15:44</span>
             </div>
         </div>
-    </div>
 
-    <!-- main content -->
-    <div class="container">
-        <div class="_card ok">
-            <div class="flex _head">
-                <span>Filename:</span>
-                <p>CDS_products.txt</p>
-            </div>
-            <div class="_content">
-                <div class="_content_inner">
-                    <div class="flex" style="gap: 1rem;">
-                        <div class="flex">
-                            <span>Product Master ID:</span>
-                            <p class="flex">
-                                1449852
+        <!-- navbar filtre -->
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 1rem">Filter:</h2>
+            <ul class="navbar">
+                <li><a href="index.html" class="active">all(10)</a></li>
+                <li><a href="ok.html" class="">ok(4)</a></li>
+                <li><a href="failed.html" class="">failed(2)</a></li>
+                <li><a href="error.html" class="">error(1)</a></li>
+                <li>
+                    <a href="unrecognised.html" class="">unrecognised(3)</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- modal -->
+
+        <div class="modal" id="popupToShow_1">
+            <div class="modal-overlay" id="overlayClosePopup_1"></div>
+            <div class="modal-content">
+                <div class="modal-bloc">
+                    <span class="close-modal" id="closePopup_1">x</span>
+                    <!-- h1 = titre de modal -->
+                    <h1>Information</h1>
+                    <hr />
+                    <div class="modal-detail">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Exercitationem odit voluptas odio, quaerat
+                            voluptatem cum!
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-bloc">
+                    <!-- h1 = titre de modal -->
+                    <h1>Details</h1>
+                    <hr />
+                    <div class="modal-bloc-inner">
+                        <div class="modal-detail modal-detail-inner">
+                            <h4>Lorem quaerat voluptatem cum!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Exercitationem odit voluptas
+                                odio, quaerat voluptatem cum!
                             </p>
                         </div>
-                        <div class="flex">
-                            <span>Product type:</span>
-                            <p>CDS</p>
+                        <div class="modal-detail modal-detail-inner">
+                            <h4>
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Placeat aspernatur omnis
+                                consequatur ullam. Beatae, consequuntur.
+                            </h4>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Exercitationem odit voluptas
+                                odio, quaerat voluptatem cum!
+                            </p>
                         </div>
-                    </div>
-                    <div class="flex _inner">
-                        <div class="_inner_content">
-                            <div class="flex">
-                                <span>Test name:</span>
-                                <p>full</p>
-                            </div>
-                            <span class="flex">
-                                <span>Status:</span>
-                                <p class="status ok">ok</p>
-                            </span>
+                        <div class="modal-detail modal-detail-inner">
+                            <h4>Lorem quaerat voluptatem cum!</h4>
+                            <ul>
+                                <li>
+                                    <p>my_pdl_id.premium_currency</p>
+                                </li>
+                                <li>
+                                    <p>my_pdl_id.underlying</p>
+                                </li>
+                                <li>
+                                    <p>s26895_market_rules.entity_kind</p>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="_inner_content">
-                            <div class="flex">
-                                <span>Test name:</span>
-                                <p>full</p>
-                            </div>
-                            <span class="flex">
-                                <span>Status:</span>
-                                <p class="status failed">failed</p>
-                            </span>
-                            <div class="flex">
-                                <span>Details:</span>
-                                <p id="showPopup_1" class="_link_show_error">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-eye-fill"
-                                        viewBox="0 0 16 16">
-                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                                        <path
-                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                                    </svg>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="_inner_content">
-                            <div class="flex">
-                                <span>Test name:</span>
-                                <p>len</p>
-                            </div>
-                            <span class="flex">
-                                <span>Status:</span>
-                                <p class="status error">error</p>
-                            </span>
-                        </div>
-                        <div class="_inner_content">
-                            <div class="flex">
-                                <span>Test name:</span>
-                                <p>same_underlying</p>
-                            </div>
-                            <span class="flex">
-                                <span>Status:</span>
-                                <p class="status unrecognised">unrecognised</p>
-                            </span>
+                        <div class="modal-detail modal-detail-inner">
+                            <h4>
+                                Lorem ipsum dolor sit amet consectetur,
+                                adipisicing elit. Placeat aspernatur omnis
+                                consequatur ullam. Beatae, consequuntur.
+                            </h4>
+                            <p>lorem600</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="script.js"></script>
+        <!-- main content -->
+        <div class="container">
+            <div class="_card ok">
+                <div class="flex _head">
+                    <span>Filename:</span>
+                    <p>CDS_products.txt</p>
+                    <p style="margin: 0 1rem">|</p>
+                    <p style="display: flex; gap: 1rem">
+                        <span class="status ok"> Ok: 4/10 </span>
+                        <span class="status failed"> Failed: 2/10 </span>
+                        <span class="status error"> Error: 1/10 </span>
+                        <span class="status unrecognised">
+                            Unrecognised: 3/10
+                        </span>
+                    </p>
+                </div>
+                <div class="_content">
+                    <div class="_content_inner">
+                        <div class="flex" style="gap: 1rem">
+                            <div class="flex">
+                                <span>Product Master ID:</span>
+                                <p class="flex">1449852</p>
+                            </div>
+                            <div class="flex">
+                                <span>Product type:</span>
+                                <p>CDS</p>
+                            </div>
+                        </div>
+                        <div class="flex _inner">
+                            <div class="_inner_content">
+                                <div class="flex">
+                                    <span>Test name:</span>
+                                    <p>full</p>
+                                </div>
+                                <span class="flex">
+                                    <span>Status:</span>
+                                    <p class="status ok">ok</p>
+                                </span>
+                            </div>
+                            <div class="_inner_content">
+                                <div class="flex">
+                                    <span>Test name:</span>
+                                    <p>full</p>
+                                </div>
+                                <span class="flex">
+                                    <span>Status:</span>
+                                    <p class="status failed">failed</p>
+                                </span>
+                                <div class="flex">
+                                    <span>Details:</span>
+                                    <p
+                                        id="showPopup_1"
+                                        class="_link_show_error"
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="currentColor"
+                                            class="bi bi-eye-fill"
+                                            viewBox="0 0 16 16"
+                                        >
+                                            <path
+                                                d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"
+                                            />
+                                            <path
+                                                d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                                            />
+                                        </svg>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="_inner_content">
+                                <div class="flex">
+                                    <span>Test name:</span>
+                                    <p>len</p>
+                                </div>
+                                <span class="flex">
+                                    <span>Status:</span>
+                                    <p class="status error">error</p>
+                                </span>
+                            </div>
+                            <div class="_inner_content">
+                                <div class="flex">
+                                    <span>Test name:</span>
+                                    <p>same_underlying</p>
+                                </div>
+                                <span class="flex">
+                                    <span>Status:</span>
+                                    <p class="status unrecognised">
+                                        unrecognised
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-</body>
-
+        <script src="script.js"></script>
+    </body>
 </html>
