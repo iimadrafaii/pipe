@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="bootstrap.min.css" />
+
+        <style>
+            .pagination .page-item.active .page-link {
+                background-color: #198754 !important;
+                border-color: #198754 !important;
+                color: #fff !important;
+            }
+            .pagination .page-item .page-link {
+                color: #198754 !important;
+                font-weight: 900;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="px-4 py-2 my-2 text-center">
+            <img
+                class="d-block mx-auto mb-4"
+                src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+                alt=""
+                width="72"
+                height="57"
+            />
+            <h1 class="display-5 fw-bold text-success">Logs Monitoring</h1>
+        </div>
+
+        <div class="container py-4">
+            <!-- Filter Top -->
+            <div class="p-4 border mb-4">
+                <h4 class="mb-4 text-center">Filter Top</h4>
+                <div class="row g-4 mb-4">
+                    <div class="col col-md-6 d-flex align-items-center gap-4">
+                        <h6 class="" style="white-space: nowrap">Order By</h6>
+                        <select
+                            class="form-select py-3"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col col-md-6 d-flex align-items-center gap-4">
+                        <h6 class="" style="white-space: nowrap">Per Page</h6>
+                        <select
+                            class="form-select py-3"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-6 mb-2 g-4">
+                    <div class="col text-center">Column 1</div>
+                    <div class="col text-center">Column 2</div>
+                    <div class="col text-center">Column 3</div>
+                    <div class="col text-center">Column 4</div>
+                    <div class="col text-center">Column 5</div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-6 mb-4 g-4">
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <span class="btn btn-success d-block"
+                            >Apply Filters</span
+                        >
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col col-md-3">
+                        <select
+                            class="form-select py-3"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col col-md-9">
+                        <div class="input-group">
+                            <div class="form-floating">
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="floatingInputGroup1"
+                                    placeholder="Username"
+                                />
+                                <label for="floatingInputGroup1"
+                                    >Rechercher</label
+                                >
+                            </div>
+                            <span
+                                class="input-group-text"
+                                id=""
+                                onclick=""
+                                style="cursor: pointer"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-search"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                                    />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- d-block : show VS d-none: hide -->
+            <div class="p-4 border mb-5 d-block bg-light w-75 mx-auto">
+                <h4 class="mb-4 text-center">Filter Bottom</h4>
+                <div class="row row-cols-1 row-cols-md-6 mb-4 g-4">
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <select
+                            class="form-select"
+                            aria-label="Default select example"
+                        >
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <span class="btn btn-success d-block"
+                            >Apply Filters</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4 d-flex align-items-center gap-2">
+                <!-- svg : icon of not found -->
+                <span>
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+                    <svg
+                        width="30px"
+                        height="30px"
+                        viewBox="0 -0.5 17 17"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        class="si-glyph si-glyph-folder-error"
+                    >
+                        <title>938</title>
+    
+                        <defs></defs>
+                        <g
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                        >
+                            <g
+                                transform="translate(1.000000, 2.000000)"
+                                fill="#aaa"
+                            >
+                                <path
+                                    d="M7.35,3 L5.788,0.042 L2.021,0.042 L2.021,1.063 L0.023,1.063 L0.023,10.976 L1.043,10.976 L1.045,11.976 L15.947,11.976 L15.968,3 L7.35,3 L7.35,3 Z M10.918,9.109 L10.09,9.938 L8.512,8.361 L6.934,9.938 L6.104,9.109 L7.682,7.531 L6.104,5.953 L6.934,5.125 L8.512,6.701 L10.088,5.125 L10.918,5.953 L9.34,7.531 L10.918,9.109 L10.918,9.109 Z"
+                                    class="si-glyph-fill"
+                                ></path>
+                                <path
+                                    d="M13.964,1.982 L13.964,1.042 L8.024,1.042 L8.354,1.982 L13.964,1.982 Z"
+                                    class="si-glyph-fill"
+                                ></path>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
+                <b style="color: #aaa;">
+                    No Products found!
+                </b>
+            </div>
+
+            <!-- top pagination and showing results -->
+            <div class="mb-4">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center gap-4">
+                        <span
+                            >Showing results : <b>1-11</b> (of
+                            <b>1469</b> )</span
+                        >
+                        <span class="d-flex align-items-center gap-4">
+                            <span class="px-2 btn btn-outline-primary">
+                                <b><</b>
+                            </span>
+                            <span
+                                class="px-3 py-2 bg-primary text-white rounded-circle"
+                                >2</span
+                            >
+                            <span class="px-2 btn btn-outline-primary">
+                                <b>></b>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="d-flex align-items-center gap-4">
+                        <div class="form-floating">
+                            <input
+                                type="number"
+                                class="form-control"
+                                id="floatingInput"
+                                placeholder=""
+                            />
+                            <label for="floatingInput">Switch Page</label>
+                        </div>
+                        <span class="btn btn-primary">Click me!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- accordion start : Products -->
+            <div class="accordion mb-4" id="accordionProducts">
+                <!-- 
+                    README !!!
+                    - each accordion item have it own ID 
+                    - add : bg-danger / bg-warning / bg-success to accordion button 
+                -->
+                <!-- Item start -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button bg-danger text-white collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#c1"
+                            aria-expanded="false"
+                            aria-controls="c1"
+                        >
+                            <b class=""> Title here </b>
+                        </button>
+                    </h2>
+                    <div
+                        id="c1"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionProducts"
+                    >
+                        <div class="accordion-body">
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item end -->
+
+                <!-- Item start -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button bg-warning text-white collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#c2"
+                            aria-expanded="false"
+                            aria-controls="c2"
+                        >
+                            <b class=""> Title here </b>
+                        </button>
+                    </h2>
+                    <div
+                        id="c2"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionProducts"
+                    >
+                        <div class="accordion-body">
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item end -->
+
+                <!-- Item start -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button
+                            class="accordion-button bg-success text-white collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#c3"
+                            aria-expanded="false"
+                            aria-controls="c3"
+                        >
+                            <b class=""> Title here </b>
+                        </button>
+                    </h2>
+                    <div
+                        id="c3"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionProducts"
+                    >
+                        <div class="accordion-body">
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                            <div class="d-flex align-items-center gap-4">
+                                <div class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </div>
+                                <h6 class="card-title">
+                                    Lorem ipsum dolor sit.
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item end -->
+            </div>
+
+            <!-- Bootstrap pagination -->
+            <nav aria-label="...">
+                <ul class="pagination mt-5 d-flex justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <script src="bootstrap.bundle.min.js"></script>
+    </body>
+</html>
