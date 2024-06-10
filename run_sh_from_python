@@ -1,0 +1,19 @@
+import subprocess
+
+# Path to the shell script you want to execute
+script_path = './your_script.sh'
+
+# Using subprocess.run with shell=True to execute the script
+result = subprocess.run(f'bash {script_path}', shell=True, capture_output=True, text=True)
+
+# Print the standard output and standard error
+print("STDOUT:")
+print(result.stdout)
+print("STDERR:")
+print(result.stderr)
+
+# Check the return code to determine if the script ran successfully
+if result.returncode == 0:
+    print("Script executed successfully")
+else:
+    print(f"Script failed with return code {result.returncode}")
