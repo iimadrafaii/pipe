@@ -1,0 +1,28 @@
+import requests
+
+# URL cible
+url = "http://example.com/upload"
+
+# Corps brut de la requête (multipart/form-data)
+raw_body = (
+    "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\n"
+    "Content-Disposition: form-data; name=\"param1\"\r\n\r\n"
+    "value1\r\n"
+    "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\n"
+    "Content-Disposition: form-data; name=\"param2\"\r\n\r\n"
+    "value2\r\n"
+    "------WebKitFormBoundary7MA4YWxkTrZu0gW--\r\n"
+)
+
+# Headers
+headers = {
+    "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
+    "Authorization": "Bearer YOUR_TOKEN",
+}
+
+# Envoi de la requête brute
+response = requests.post(url, data=raw_body, headers=headers)
+
+# Afficher la réponse
+print("Code de réponse :", response.status_code)
+print("Contenu de la réponse :", response.text)
