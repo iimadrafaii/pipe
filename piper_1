@@ -1,29 +1,39 @@
 import csv
 
-# Specify file names
-input_file = "your_file.csv"  # Original CSV file
-output_file = "filtered_output.csv"  # New CSV file with selected columns
+def filter_non_empty_rows(input_file, output_file, required_columns):
+    """
+    Filters rows in a CSV file where the specified columns have non-empty values.
+    
+    :param input_file: Path to the input CSV file
+    :param output_file: Path to the output filtered CSV file
+    :param required_columns: List of column names that must not be empty
+    """
+    with open(input_file, newline='', encoding="utf-8") as infile:
+        reader = csv.reader(infile)
+        headers = next(reader)  # Read the header row
 
-# Specify the columns to extract
-columns_to_extract = ["Column1", "Column2"]  # Replace with actual column names
+        # Get indices of the required columns
+        indices = [headers.index(col) for col in required_columns]
 
-# Read the original file and extract specific columns
-with open(input_file, newline='', encoding="utf-8") as infile:
-    reader = csv.reader(infile)
-    headers = next(reader)  # Read the header row
+        # Write filtered data to the new CSV file
+        with open(output_file, "w", newline='', encoding="utf-8") as outfile:
+            writer = csv.writer(outfile)
+            writer.writerow(headers)  # Write header row
 
-    # Find indices of desired columns
-    indices = [headers.index(col) for col in columns_to_extract]
+            for row in reader:
+                # Check if all required columns contain non-empty values
+                if all(row[i].strip() for i in indices):
+                    writer.writerow(row)
 
-    # Write extracted columns to a new file
-    with open(output_file, "w", newline='', encoding="utf-8") as outfile:
-        writer = csv.writer(outfile)
-        writer.writerow(columns_to_extract)  # Write header
-        for row in reader:
-            writer.writerow([row[i] for i in indices])  # Write selected columns
+# Example usage
+input_file = "your_file.csv"
+output_file = "filtered_output.csv"
+required_columns = ["Column1", "Column2"]  # Replace with actual column names
+
+filter_non_empty_rows(input_file, output_file, required_columns)
 
 # Read and display the new CSV file
 with open(output_file, newline='', encoding="utf-8") as outfile:
     reader = csv.reader(outfile)
     for row in reader:
-        print(row)  # Print each row of the new file
+        print(row)
