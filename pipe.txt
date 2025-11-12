@@ -1,0 +1,52 @@
+import requests
+
+class RestClient:
+    """
+    A simple reusable REST API client for performing HTTP requests.
+    """
+
+    def __init__(self, base_url, headers=None, auth=None, timeout=10):
+        self.base_url = base_url.rstrip('/')
+        self.session = requests.Session()
+        self.session.headers.update(headers or {})
+        self.auth = auth
+        self.timeout = timeout
+
+    def _url(self, endpoint):
+        """Build full URL for endpoint."""
+        return f"{self.base_url}/{endpoint.lstrip('/')}"
+
+    def _handle_response(self, response):
+        """Handle responses with automatic error checking."""
+        try:
+            response.raise_for_status()
+            # Try JSON first
+            return response.json()
+        except ValueError:
+            # Fallback to text if not JSON
+            return response.text
+        except requests.exceptions.HTTPError as e:
+            print(f"❌ HTTP Error: {e} ({response.status_code})")
+            return None
+
+    # === HTTP METHODS ===
+
+    def get(self, endpoint, params=None):
+        url = self._url(endpoint)
+        response = self.session.get(url, params=params, auth=self.auth, timeout=self.timeout)
+        return self._handle_response(response)
+
+    def post(self, endpoint, data=None, json=None):
+        url = self._url(endpoint)
+        response = self.session.post(url, data=data, json=json, auth=self.auth, timeout=self.timeout)
+        return self._handle_response(response)
+
+    def put(self, endpoint, data=None, json=None):
+        url = self._url(endpoint)
+        response = self.session.put(url, data=data, json=json, auth=self.auth, timeout=self.timeout)
+        return self._handle_response(response)
+
+    def delete(self, endpoint):
+        url = self._url(endpoint)
+        response = self.session.delete(url, auth=self.auth, timeout=self.timeout)
+        return self._handle_response(response)
