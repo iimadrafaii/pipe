@@ -1,52 +1,46 @@
-import requests
+pip install func-timeout
 
-class RestClient:
-    """
-    A simple reusable REST API client for performing HTTP requests.
-    """
+from func_timeout import func_timeout, FunctionTimedOut
 
-    def __init__(self, base_url, headers=None, auth=None, timeout=10):
-        self.base_url = base_url.rstrip('/')
-        self.session = requests.Session()
-        self.session.headers.update(headers or {})
-        self.auth = auth
-        self.timeout = timeout
+def long_running_function():
+    import time
+    time.sleep(5)
+    return "Done"
 
-    def _url(self, endpoint):
-        """Build full URL for endpoint."""
-        return f"{self.base_url}/{endpoint.lstrip('/')}"
+try:
+    # Run function with a 2-second timeout
+    result = func_timeout(2, long_running_function)
+    print(result)
+except FunctionTimedOut:
+    print("The function took too long and was terminated.")
+except Exception as e:
+    print(f"Another error occurred: {e}")
 
-    def _handle_response(self, response):
-        """Handle responses with automatic error checking."""
-        try:
-            response.raise_for_status()
-            # Try JSON first
-            return response.json()
-        except ValueError:
-            # Fallback to text if not JSON
-            return response.text
-        except requests.exceptions.HTTPError as e:
-            print(f"❌ HTTP Error: {e} ({response.status_code})")
-            return None
+////////////
 
-    # === HTTP METHODS ===
+import multiprocessing
+import time
 
-    def get(self, endpoint, params=None):
-        url = self._url(endpoint)
-        response = self.session.get(url, params=params, auth=self.auth, timeout=self.timeout)
-        return self._handle_response(response)
+def long_running_function(name):
+    print(f"Process {name} started")
+    time.sleep(5)
+    print(f"Process {name} finished")
 
-    def post(self, endpoint, data=None, json=None):
-        url = self._url(endpoint)
-        response = self.session.post(url, data=data, json=json, auth=self.auth, timeout=self.timeout)
-        return self._handle_response(response)
+if __name__ == '__main__':
+    # Create the process
+    p = multiprocessing.Process(target=long_running_function, args=("A",))
+    p.start()
 
-    def put(self, endpoint, data=None, json=None):
-        url = self._url(endpoint)
-        response = self.session.put(url, data=data, json=json, auth=self.auth, timeout=self.timeout)
-        return self._handle_response(response)
+    # Wait for 2 seconds only
+    p.join(timeout=2)
 
-    def delete(self, endpoint):
-        url = self._url(endpoint)
-        response = self.session.delete(url, auth=self.auth, timeout=self.timeout)
-        return self._handle_response(response)
+    # If thread is still active using is_alive()
+    if p.is_alive():
+        print("Function timed out! Killing process...")
+        p.terminate()  # Forcefully kill the process
+        p.join()       # Clean up
+    else:
+        print("Function finished successfully.")
+
+/////////////
+
