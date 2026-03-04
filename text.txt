@@ -1,0 +1,7 @@
+Ressources to prepare METHODO :
+    https://portswigger.net/web-security/csrf#what-is-csrf
+    https://book.hacktricks.wiki/en/pentesting-web/sql-injection/index.html#bypass-column-names-restriction
+    https://owasp.org/www-community/attacks/SQL_Injection
+    https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/SQL%20Injection
+    SQLi - SSTI - OS Command Injection - XXE - NoSQLi - Broken Access Control - Broken Session Management - OAuth - JWT - Insecure Deserialization - SSRF - Path Traversal - LFI, RFI - File Upload - Prototype Pollution - GraphQL API
+    https://0xpr0fx.notion.site/WEB-Vulnerabilities-254a13fda6a94951bed85eaaad1a7603
